@@ -1,7 +1,8 @@
 name: appbar_animated
 description: Animated text color and background appbar when scrolling.
 version: 0.0.1
-homepage:
+homepage: https://github.com/zahniar88/appbar_animated
+repository: https://github.com/zahniar88/appbar_animated
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
