@@ -19,21 +19,12 @@ class DetailPage extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  final ColorTween background = ColorTween(
-    begin: Colors.transparent,
-    end: Colors.blue,
-  );
-  final ColorTween text = ColorTween(
-    begin: Colors.white,
-    end: Colors.black,
-  );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AppBarColorAnimated(
-        backgroundColor: background,
-        color: text,
+      body: ScaffoldLayoutBuilder(
+        backgroundColorAppBar: ColorBuilder(Colors.transparent, Colors.blue),
+        textColorAppBar: ColorBuilder(Colors.black, Colors.white),
         appBarBuilder: _appBar,
         body: SingleChildScrollView(
           child: Stack(
@@ -63,26 +54,26 @@ class DetailPage extends StatelessWidget {
     );
   }
 
-  Widget _appBar(context, bgColor, color) {
+  Widget _appBar(BuildContext context, ColorAnimated colorAnimated) {
     return AppBar(
-      backgroundColor: bgColor,
+      backgroundColor: colorAnimated.background,
       elevation: 0,
       title: Text(
         "AppBar Animate",
         style: TextStyle(
-          color: color,
+          color: colorAnimated.color,
         ),
       ),
       leading: Icon(
         Icons.arrow_back_ios_new_rounded,
-        color: color,
+        color: colorAnimated.color,
       ),
       actions: [
         IconButton(
           onPressed: () {},
           icon: Icon(
             Icons.favorite,
-            color: color,
+            color: colorAnimated.color,
           ),
         ),
       ],

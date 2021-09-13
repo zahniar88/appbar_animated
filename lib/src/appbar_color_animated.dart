@@ -7,6 +7,7 @@ typedef AppBarBuilder = Widget Function(
 );
 
 class AppBarColorAnimated extends StatefulWidget {
+  @Deprecated("")
   const AppBarColorAnimated({
     Key? key,
     required this.backgroundColor,
