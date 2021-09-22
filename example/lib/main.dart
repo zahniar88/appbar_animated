@@ -2,20 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:appbar_animated/appbar_animated.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: DetailPage(),
     );
   }
 }
 
 class DetailPage extends StatelessWidget {
-  DetailPage({
+  const DetailPage({
     Key? key,
   }) : super(key: key);
 
@@ -23,14 +25,15 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ScaffoldLayoutBuilder(
-        backgroundColorAppBar: ColorBuilder(Colors.transparent, Colors.blue),
-        textColorAppBar: ColorBuilder(Colors.black, Colors.white),
+        backgroundColorAppBar:
+            const ColorBuilder(Colors.transparent, Colors.blue),
+        textColorAppBar: const ColorBuilder(Colors.white),
         appBarBuilder: _appBar,
-        body: SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Stack(
             children: [
               Image.network(
-                "https://images.unsplash.com/photo-1600758208050-a22f17dc5bb9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80",
+                "https://www.gotravelly.com/blog/wp-content/uploads/2019/10/Gunung-Fuji-Jepang.jpg",
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.4,
                 fit: BoxFit.cover,
@@ -40,7 +43,7 @@ class DetailPage extends StatelessWidget {
                   top: MediaQuery.of(context).size.height * 0.36,
                 ),
                 height: 900,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(40),
                   ),

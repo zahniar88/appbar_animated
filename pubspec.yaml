@@ -1,6 +1,6 @@
 name: appbar_animated
 description: Library to help you create animated text and background colors when scrolled.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/zahniar88/appbar_animated
 repository: https://github.com/zahniar88/appbar_animated
 
@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
+  flutter_lints: ^1.0.4
   flutter_test:
     sdk: flutter
 

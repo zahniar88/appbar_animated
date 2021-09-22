@@ -62,7 +62,7 @@ class _AppBarColorAnimatedState extends State<AppBarColorAnimated>
       child: Stack(
         children: [
           widget.body,
-          Container(
+          SizedBox(
             height: widget.appBarHeight,
             child: AnimatedBuilder(
               animation: animationController,
